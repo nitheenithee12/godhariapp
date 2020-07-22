@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E0A5EA"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#87E8DA">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/close_settings_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    android:background="@android:color/white"
+
+                    />
+
+                <TextView
+                    android:id="@+id/update_settings_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:color/white"
+
+                    />
+
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/settings_profile_image"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+
+
+    />
+
+
+    <TextView
+        android:id="@+id/profile_image_change_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="@android:color/white"
+        android:text="@string/change_profile"
+        android:layout_below="@id/settings_profile_image"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+
+        />
+
+    <EditText
+        android:id="@+id/settings_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/profile_image_change_btn"
+        android:layout_marginTop="5dp"
+        android:hint="Secondary Phone Number..."
+        android:layout_margin="15dp"
+        android:background="@color/cardview_light_background"
+        />
+
+
+    <EditText
+        android:id="@+id/settings_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/settings_phone_number"
+        android:layout_marginTop="1dp"
+        android:hint="Full Name..."
+        android:layout_margin="15dp"
+
+        android:background="@color/cardview_light_background"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/settings_address"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/settings_full_name"
+        android:layout_marginTop="1dp"
+        android:hint="Your Address..."
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:background="@color/cardview_light_background"
+        />
+
+
+</RelativeLayout>

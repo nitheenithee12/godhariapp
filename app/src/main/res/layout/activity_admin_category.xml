@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.AdminCategoryActivity">
+    
+    <TextView
+        android:id="@+id/slogan_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Add new products"
+        android:textAlignment="center"
+        android:textSize="26dp"
+        android:textStyle="bold|italic"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/linear1_category_layout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@+id/slogan_category"
+        android:layout_marginTop="45dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/cotton"
+            android:layout_width="137dp"
+            android:layout_height="80dp"
+            android:src="@drawable/c" />
+
+        <ImageView
+            android:id="@+id/silk"
+            android:layout_width="134dp"
+            android:layout_height="78dp"
+            android:src="@drawable/s" />
+
+        <ImageView
+            android:id="@+id/cottonblend"
+            android:layout_width="wrap_content"
+            android:layout_height="81dp"
+            android:src="@drawable/cb" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear2_category_layout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@+id/linear1_category_layout"
+        android:layout_marginTop="45dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/synthetic"
+            android:layout_width="137dp"
+            android:layout_height="80dp"
+            android:src="@drawable/sn" />
+
+        <ImageView
+            android:id="@+id/new_cat"
+            android:layout_width="134dp"
+            android:layout_height="78dp"
+            android:src="@drawable/n" />
+
+        <ImageView
+            android:id="@+id/general"
+            android:layout_width="wrap_content"
+            android:layout_height="81dp"
+            android:src="@drawable/ge" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/linear3_category_layout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@+id/linear2_category_layout"
+        android:layout_marginTop="45dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/party_wear"
+            android:layout_width="134dp"
+            android:layout_height="78dp"
+            android:src="@drawable/e" />
+
+        <ImageView
+            android:id="@+id/extra"
+            android:layout_width="137dp"
+            android:layout_height="80dp"
+            android:src="@drawable/extra" />
+
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/maintain_products_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_above="@+id/check_orders_btn"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Product Maintenance."
+        android:textSize="20dp"
+        android:background="@color/cardview_shadow_start_color"
+
+        />
+
+
+
+    <Button
+    android:id="@+id/check_orders_btn"
+    android:layout_width="match_parent"
+    android:layout_height="42dp"
+    android:layout_above="@+id/admin_logout_btn"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+    android:text="Check new orders."
+    android:textSize="20dp"
+    android:background="@color/cardview_shadow_start_color"
+
+    />
+
+
+    <Button
+        android:id="@+id/admin_logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+
+        android:text="logout."
+        android:textSize="20dp"
+        android:background="@color/cardview_shadow_start_color"
+
+        />
+
+
+
+
+</RelativeLayout>

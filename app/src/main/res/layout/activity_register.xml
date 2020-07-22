@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/appka"
+    tools:context=".RegisterActivity">
+
+
+    <EditText
+        android:id="@+id/Name1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0D80DC"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_above="@+id/register_phone"
+        android:hint="Your Name"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/white" />
+
+
+    <EditText
+        android:id="@+id/register_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/new_passkey1"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="#0D80DC"
+        android:hint=" Phone Number"
+        android:inputType="phone"
+        android:digits="0123456789"
+        android:maxLength="10"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/white" />
+
+    <EditText
+        android:id="@+id/new_passkey1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:padding="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="#0D80DC"
+        android:layout_above="@id/otp_button"
+        android:hint="@string/prompt_password"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/white" />
+
+
+    <Button
+        android:id="@+id/otp_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_above="@id/verify_OTP"
+        android:layout_marginBottom="70dp"
+        android:background="@color/cardview_dark_background"
+        android:text="Generate OTP"
+        android:textColor="@android:color/white"
+        android:textSize="25dp"
+         />
+
+    <EditText
+        android:id="@+id/verify_OTP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="#B0DA7F"
+        android:layout_above="@id/register"
+        android:hint="Enter OTP recieved"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:enabled="true"
+        android:text="Register Now"
+        android:background="@color/cardview_dark_background"
+        android:textColor="@android:color/white" />
+
+
+
+
+
+</RelativeLayout>
