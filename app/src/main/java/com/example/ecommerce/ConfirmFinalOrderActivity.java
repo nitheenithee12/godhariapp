@@ -2,9 +2,13 @@ package com.example.ecommerce;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +29,8 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity
 {
     private EditText nameEditText, phoneEditText, addressEditText, pincode, cityEditText;
     private Button confirmOrderBtn;
-
+    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
+    private String phoneNo, message,msg;
 
     private String totalAmount = "";
 
@@ -45,6 +50,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity
         addressEditText = (EditText) findViewById(R.id.shipment_address);
         cityEditText = (EditText) findViewById(R.id.shipment_city_name);
         pincode = (EditText) findViewById(R.id.shipment_zipcode);
+
 
 
 
@@ -145,6 +151,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity
                         {
                             if(task.isSuccessful())
                             {
+                                sendSMSMessage();
                                 Toast.makeText(ConfirmFinalOrderActivity.this, "Your final order has been placed successfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(ConfirmFinalOrderActivity.this, HomeActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -161,5 +168,39 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity
             }
         });
 
+    }
+    protected void sendSMSMessage() {
+        phoneNo = "+91" + phoneEditText.getText().toString();
+         msg = "Your order has been placed successfully.";
+        //message = msg;
+
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.SEND_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.SEND_SMS)) {
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.SEND_SMS},
+                        MY_PERMISSIONS_REQUEST_SEND_SMS);
+            }
+        }
+    }
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(phoneNo, null, msg, null, null);
+                    Toast.makeText(getApplicationContext(), "SMS sent.",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "Message didn't sent...", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+        }
     }
 }

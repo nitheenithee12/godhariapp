@@ -50,6 +50,7 @@
             android:layout_below="@id/product_image_edit"
             android:textAlignment="center"
             android:layout_marginTop="10dp"
+            android:inputType="number"
             android:background="#C95CDC"
             android:textSize="25sp"
             android:textStyle="bold|italic"

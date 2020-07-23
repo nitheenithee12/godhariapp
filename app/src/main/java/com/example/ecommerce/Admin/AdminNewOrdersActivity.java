@@ -106,6 +106,8 @@ public class AdminNewOrdersActivity extends AppCompatActivity
                                 }
                                 else
                                 {
+                                    Intent intent = new Intent(AdminNewOrdersActivity.this, AdminNewOrdersActivity.class);
+                                    startActivity(intent);
                                     finish();
                                 }
 
